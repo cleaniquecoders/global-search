@@ -5,15 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/cleaniquecoders/global-search/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/cleaniquecoders/global-search/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/cleaniquecoders/global-search.svg?style=flat-square)](https://packagist.org/packages/cleaniquecoders/global-search)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/global-search.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/global-search)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+A simplified global search for Laravel Scout.
 
 ## Installation
 
@@ -36,24 +28,49 @@ You can publish the config file with:
 php artisan vendor:publish --tag="global-search-config"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="global-search-views"
-```
-
 ## Usage
 
+Install [Laravel Scout](https://laravel.com/docs/9.x/scout#installation).
+
+Then configure your model so that it's [searchable](https://laravel.com/docs/9.x/scout#configuring-searchable-data).
+
+To add more search capabilities, you may add more enum values as in `app/Enums/SearchType` class.
+
 ```php
-$globalSearch = new CleaniqueCoders\GlobalSearch();
-echo $globalSearch->echoPhrase('Hello, CleaniqueCoders!');
+<?php
+
+namespace App\Enums;
+
+use Spatie\Enum\Laravel\Enum;
+
+/**
+ * @method static self user()
+ * @method static self profile()
+ */
+class SearchType extends Enum
+{
+    public static function values(): array
+    {
+        return [
+            'user' => \App\Models\User::class,
+            'profile' => \App\Models\Profile::class,
+        ];
+    }
+
+    protected static function labels(): array
+    {
+        return [
+            'user' => __('User'),
+            'profile' => __('Profile'),
+        ];
+    }
+}
+```
+
+Use the Livewire component:
+
+```php
+@livewire('search')
 ```
 
 ## Testing
