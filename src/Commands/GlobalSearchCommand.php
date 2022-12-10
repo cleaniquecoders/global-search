@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace CleaniqueCoders\GlobalSearch\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class GlobalSearchCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'global-search';
 
     public $description = 'My command';
 
