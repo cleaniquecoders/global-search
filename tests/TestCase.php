@@ -2,9 +2,9 @@
 
 namespace CleaniqueCoders\GlobalSearch\Tests;
 
+use CleaniqueCoders\GlobalSearch\GlobalSearchServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use CleaniqueCoders\GlobalSearch\GlobalSearchServiceProvider;
 
 class TestCase extends Orchestra
 {
