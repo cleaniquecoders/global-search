@@ -2,7 +2,6 @@
 
 use CleaniqueCoders\GlobalSearch\Facades\GlobalSearch;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
 use function PHPUnit\Framework\assertTrue;
 
 uses(RefreshDatabase::class);
