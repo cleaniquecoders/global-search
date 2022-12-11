@@ -3,6 +3,7 @@
 namespace CleaniqueCoders\GlobalSearch\Tests;
 
 use CleaniqueCoders\GlobalSearch\GlobalSearchServiceProvider;
+use CleaniqueCoders\GlobalSearch\Tests\Enums\SearchType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -26,11 +27,10 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
+        config()->set('scout.driver', 'database');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_global-search_table.php.stub';
-        $migration->up();
-        */
+        config()->set('global-search.type', SearchType::class);
+
+        config()->set('scout.driver', 'database');
     }
 }

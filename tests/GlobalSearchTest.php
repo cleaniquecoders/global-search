@@ -19,3 +19,14 @@ it('has search route', function () {
         ! empty(route(config('global-search.route_name')))
     );
 })->group('helpers');
+
+it('can search user', function () {
+    // should return non-existent users
+    // should return valid user
+    // should abort if no keyword
+    // should abort if non-existence search type
+    // shoudl return paginated / first
+    assertTrue(true);
+})->group('helpers');
+
+

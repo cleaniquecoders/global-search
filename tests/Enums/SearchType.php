@@ -1,7 +1,8 @@
 <?php
 
-namespace CleaniqueCoders\GlobalSearch\Enums;
+namespace CleaniqueCoders\GlobalSearch\Tests\Enums;
 
+use CleaniqueCoders\GlobalSearch\Tests\Models\User;
 use Spatie\Enum\Laravel\Enum;
 
 /**
@@ -13,7 +14,7 @@ class SearchType extends Enum
     public static function values(): array
     {
         return [
-            'user' => \App\Models\User::class,
+            'user' => User::class,
         ];
     }
 
