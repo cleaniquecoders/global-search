@@ -2,8 +2,8 @@
 
 namespace CleaniqueCoders\GlobalSearch\Tests\Models;
 
-use Laravel\Scout\Searchable;
 use Illuminate\Foundation\Auth\User as Model;
+use Laravel\Scout\Searchable;
 
 class User extends Model
 {

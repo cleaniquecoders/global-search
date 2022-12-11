@@ -28,5 +28,3 @@ it('can search user', function () {
     // shoudl return paginated / first
     assertTrue(true);
 })->group('helpers');
-
-
