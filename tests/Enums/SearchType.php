@@ -7,7 +7,6 @@ use Spatie\Enum\Laravel\Enum;
 
 /**
  * @method static self user()
- * @method static self profile()
  */
 class SearchType extends Enum
 {

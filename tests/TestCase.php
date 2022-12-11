@@ -2,6 +2,7 @@
 
 namespace CleaniqueCoders\GlobalSearch\Tests;
 
+use CleaniqueCoders\GlobalSearch\Facades\GlobalSearch;
 use CleaniqueCoders\GlobalSearch\GlobalSearchServiceProvider;
 use CleaniqueCoders\GlobalSearch\Tests\Enums\SearchType;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -14,8 +15,10 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'CleaniqueCoders\\GlobalSearch\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'CleaniqueCoders\\GlobalSearch\\Tests\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        GlobalSearch::routes();
     }
 
     protected function getPackageProviders($app)
@@ -27,10 +30,7 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('scout.driver', 'database');
-
         config()->set('global-search.type', SearchType::class);
-
         config()->set('scout.driver', 'database');
     }
 }

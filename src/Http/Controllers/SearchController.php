@@ -14,20 +14,20 @@ class SearchController extends Controller
     public function __invoke(Request $request)
     {
         abort_if(
-            empty($request->type) || empty(config('model_type')::tryFrom($request->type)),
-            404,
+            empty($request->type) || empty(config('global-search.type')::tryFrom($request->type)),
+            424,
             __('Unknown search type')
         );
 
         abort_if(
-            empty($request->search),
+            empty($request->keyword),
             404,
             __('Please provide search keyword')
         );
 
         return search(
-            config('model_type')::tryFrom($request->type),
-            $request->search,
+            config('global-search.type')::tryFrom($request->type),
+            $request->keyword,
             $request->query('paginate', false)
         );
     }

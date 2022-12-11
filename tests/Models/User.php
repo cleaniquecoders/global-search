@@ -2,12 +2,13 @@
 
 namespace CleaniqueCoders\GlobalSearch\Tests\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Model;
 use Laravel\Scout\Searchable;
 
 class User extends Model
 {
-    use Searchable;
+    use Searchable, HasFactory;
 
     protected $guarded = ['id'];
 

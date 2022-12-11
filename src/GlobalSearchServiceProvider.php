@@ -17,9 +17,6 @@ class GlobalSearchServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('global-search')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_global-search_table')
-            ->hasCommand(GlobalSearchCommand::class);
+            ->hasConfigFile();
     }
 }
