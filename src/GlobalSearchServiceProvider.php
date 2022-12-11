@@ -2,7 +2,6 @@
 
 namespace CleaniqueCoders\GlobalSearch;
 
-use CleaniqueCoders\GlobalSearch\Commands\GlobalSearchCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

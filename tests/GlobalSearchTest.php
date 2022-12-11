@@ -1,8 +1,6 @@
 <?php
 
 use CleaniqueCoders\GlobalSearch\Tests\Models\User;
-
-use function PHPUnit\Framework\assertJson;
 use function PHPUnit\Framework\assertTrue;
 
 it('has search helper', function () {
@@ -36,7 +34,7 @@ it('return no user', function () {
     login(User::first())->get(
         route('search', [
             'type' => 'user',
-            'keyword' => 'nothing'
+            'keyword' => 'nothing',
         ])
     )
     ->assertStatus(200);
@@ -47,7 +45,7 @@ it('return user', function () {
     login(User::first())->get(
         route('search', [
             'type' => 'user',
-            'keyword' => 'pest'
+            'keyword' => 'pest',
         ])
     )
     ->assertStatus(200);
