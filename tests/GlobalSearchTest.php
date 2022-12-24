@@ -51,6 +51,22 @@ it('return user', function () {
     ->assertStatus(200);
 })->group('helpers');
 
+it('return paginated list users', function () {
+    remigrate();
+    User::factory(100)->create();
+    $response = login(User::first())->get(
+        route('search', [
+            'type' => 'user',
+            'keyword' => 'a',
+            'paginate' => true,
+        ])
+    );
+
+    $response->assertStatus(200);
+    // any other way to test?
+    assertTrue(isset($response->getData()->current_page));
+})->group('helpers');
+
 // it('can search user', function () {
 //     // should return non-existent users
 //     // should return valid user
