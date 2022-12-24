@@ -66,10 +66,3 @@ it('return paginated list users', function () {
     // any other way to test?
     assertTrue(isset($response->getData()->current_page));
 })->group('helpers');
-
-// it('can search user', function () {
-//     // should return non-existent users
-//     // should return valid user
-//     // shoudl return paginated / first
-//     assertTrue(true);
-// })->group('helpers');
