@@ -5,21 +5,21 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/cleaniquecoders/global-search/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/cleaniquecoders/global-search/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/cleaniquecoders/global-search.svg?style=flat-square)](https://packagist.org/packages/cleaniquecoders/global-search)
 
-A simplified global search for Laravel Scout.
+A simplified global search URL endpoint for your application.
 
 ## Installation
 
-You can install the package via composer:
+You are required to install [Laravel Scout](https://laravel.com/docs/9.x/scout#installation) first, then choose which driver you preferred to use:
+
+1. [Algolia](https://laravel.com/docs/9.x/scout#algolia)
+2. [Meilisearch](https://laravel.com/docs/9.x/scout#meilisearch)
+3. [Database](https://laravel.com/docs/9.x/scout#database-and-collection-engines)
+4. [Collection](https://laravel.com/docs/9.x/scout#collection-engine)
+
+Then you can install the package via composer:
 
 ```bash
 composer require cleaniquecoders/global-search
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="global-search-migrations"
-php artisan migrate
 ```
 
 You can publish the config file with:
@@ -30,9 +30,7 @@ php artisan vendor:publish --tag="global-search-config"
 
 ## Usage
 
-Install [Laravel Scout](https://laravel.com/docs/9.x/scout#installation).
-
-Then configure your model so that it's [searchable](https://laravel.com/docs/9.x/scout#configuring-searchable-data).
+Configure your model so that it's [searchable](https://laravel.com/docs/9.x/scout#configuring-searchable-data).
 
 Next, add the following in your `routes/api.php`:
 
@@ -117,8 +115,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Nasrul Hazim Bin Mohamad](https://github.com/cleaniquecoders)
-- [All Contributors](../../contributors)
+-   [Nasrul Hazim Bin Mohamad](https://github.com/cleaniquecoders)
+-   [All Contributors](../../contributors)
 
 ## License
 
