@@ -43,6 +43,27 @@ use CleaniqueCoders\GlobalSearch\GlobalSearch;
 GlobalSearch::routes();
 ```
 
+You may now use the API search route in your front-end:
+
+```javascript
+axios.get('search', {
+    'type' => 'user',
+    'keyword' => 'nasrul'
+})
+.then(...)
+```
+
+If you need to call within your application, from the back-end, you can use the `search()` helper:
+
+```php
+// get the first result
+search(\App\Models\User::class, 'nasrul');
+
+// get all possible result by passing true to the third argument
+// this will return a paginated result
+search(\App\Models\User::class, 'nasrul', true);
+```
+
 To add more search capabilities, you may add more enum values as in `app/Enums/SearchType` class.
 
 ```php
