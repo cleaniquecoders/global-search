@@ -34,6 +34,15 @@ Install [Laravel Scout](https://laravel.com/docs/9.x/scout#installation).
 
 Then configure your model so that it's [searchable](https://laravel.com/docs/9.x/scout#configuring-searchable-data).
 
+Next, add the following in your `routes/api.php`:
+
+```php
+
+use CleaniqueCoders\GlobalSearch\GlobalSearch;
+
+GlobalSearch::routes();
+```
+
 To add more search capabilities, you may add more enum values as in `app/Enums/SearchType` class.
 
 ```php
@@ -65,12 +74,6 @@ class SearchType extends Enum
         ];
     }
 }
-```
-
-Use the Livewire component:
-
-```php
-@livewire('search')
 ```
 
 ## Testing
