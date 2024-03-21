@@ -1,78 +1,78 @@
 {
-    "name": "cleaniquecoders/global-search",
-    "description": "A simplified global search for Laravel Scout",
-    "keywords": [
-        "cleaniquecoders",
-        "laravel",
-        "global-search"
-    ],
-    "homepage": "https://github.com/cleaniquecoders/global-search",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Nasrul Hazim Bin Mohamad",
-            "email": "nasrulhazim.m@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^8.1",
-        "illuminate/contracts": "^10.0",
-        "laravel/scout": "^10.0",
-        "spatie/laravel-enum": "^3.0|^4.0",
-        "spatie/laravel-package-tools": "^1.14.0"
+  "name": "cleaniquecoders/global-search",
+  "description": "A simplified global search for Laravel Scout",
+  "keywords": [
+    "cleaniquecoders",
+    "laravel",
+    "global-search"
+  ],
+  "homepage": "https://github.com/cleaniquecoders/global-search",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nasrul Hazim Bin Mohamad",
+      "email": "nasrulhazim.m@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.1 | ^8.2 | ^8.3",
+    "illuminate/contracts": "^10.0 | ^11.0",
+    "laravel/scout": "^10.0 | ^11.0",
+    "spatie/laravel-enum": "^3.0|^4.0",
+    "spatie/laravel-package-tools": "^1.14.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.0",
+    "nunomaduro/collision": "^6.4",
+    "nunomaduro/larastan": "^2.0.1",
+    "orchestra/testbench": "^8.0 | ^9.0",
+    "pestphp/pest": "^1.21",
+    "pestphp/pest-plugin-laravel": "^1.3",
+    "phpstan/extension-installer": "^1.1",
+    "phpstan/phpstan-deprecation-rules": "^1.0",
+    "phpstan/phpstan-phpunit": "^1.0",
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "CleaniqueCoders\\GlobalSearch\\": "src",
+      "CleaniqueCoders\\GlobalSearch\\Database\\Factories\\": "database/factories"
     },
-    "require-dev": {
-        "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^6.4",
-        "nunomaduro/larastan": "^2.0.1",
-        "orchestra/testbench": "^8.0",
-        "pestphp/pest": "^1.21",
-        "pestphp/pest-plugin-laravel": "^1.3",
-        "phpstan/extension-installer": "^1.1",
-        "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "phpunit/phpunit": "^9.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "CleaniqueCoders\\GlobalSearch\\": "src",
-            "CleaniqueCoders\\GlobalSearch\\Database\\Factories\\": "database/factories"
-        },
-        "files": [
-            "support/helpers.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "CleaniqueCoders\\GlobalSearch\\Tests\\": "tests",
-            "CleaniqueCoders\\GlobalSearch\\Tests\\Database\\Factories\\": "tests/database/factories"
-        }
-    },
-    "scripts": {
-        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "CleaniqueCoders\\GlobalSearch\\GlobalSearchServiceProvider"
-            ],
-            "aliases": {
-                "GlobalSearch": "CleaniqueCoders\\GlobalSearch\\Facades\\GlobalSearch"
-            }
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "files": [
+      "support/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CleaniqueCoders\\GlobalSearch\\Tests\\": "tests",
+      "CleaniqueCoders\\GlobalSearch\\Tests\\Database\\Factories\\": "tests/database/factories"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+    "analyse": "vendor/bin/phpstan analyse",
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "format": "vendor/bin/pint"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "phpstan/extension-installer": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "CleaniqueCoders\\GlobalSearch\\GlobalSearchServiceProvider"
+      ],
+      "aliases": {
+        "GlobalSearch": "CleaniqueCoders\\GlobalSearch\\Facades\\GlobalSearch"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
